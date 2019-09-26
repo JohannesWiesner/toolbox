@@ -11,7 +11,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import scipy.stats as stats
 import os
-import cPickle as pickle
+import pickle
 import bz2 as bzip
 import itertools
 
@@ -133,7 +133,7 @@ class AnnotatedPlots:
         # TODO: find a way of printing it ON the violinplot
         t_tests = t_test_df(df, y_var, x_var, groups=order)
         anova = run_anova_df(df, y_var, x_var)
-        print 'ANOVA for %s (%s): %.3f' % (x_var, y_var, anova['PR(>F)'].values[0])
+        print('ANOVA for %s (%s): %.3f' % (x_var, y_var, anova['PR(>F)'].values[0]))
     
         # Plot the statistical annotation for combinations on the graph
         for ti, t in enumerate(t_tests):            
